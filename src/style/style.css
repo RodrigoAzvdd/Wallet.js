@@ -27,6 +27,8 @@
 }
 
 .footer {
+    text-align: center;
+    padding: 0rem 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,8 +63,7 @@ a:hover {
 }
 
 .first-section {
-    padding: 6rem 4rem;
-    height: 8rem;
+    padding: 2rem 4rem;
     background-color: #D9D9D9;
     display: flex;
     justify-content: space-around;
@@ -86,6 +87,7 @@ a:hover {
 #user-message {
     font-size: 1.5rem;
     padding: 5rem;
+    text-align: center;
 }
 
 .balance {
@@ -219,7 +221,7 @@ a:hover {
     }
 
     .first-btn-div {
-        width: 90%;
+        width: 100%;
     }
 
     .saq,
@@ -233,9 +235,24 @@ a:hover {
 }
 
 @media (max-width: 975px) {
+
+    .transation-div {
+        width: 100%;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .first-section {
+        flex-direction: column;
+    }
+
     .form {
         display: flex;
         flex-direction: row;
+    }
+
+    .first-btn-div {
+        width: 80%;
     }
 
     .first-btn-div {
@@ -245,5 +262,28 @@ a:hover {
         align-items: center;
         justify-content: space-around;
         margin-top: 1rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .form {
+        flex-direction: column;
+    }
+
+    .first-section {
+        padding: 3rem 2rem;
+        text-align: center;
+    }
+
+    .balance {
+        width: 100%;
+    }
+
+    .first-btn-div {
+        width: 100%;
+    }
+
+    .footer-items {
+        gap: 1.5rem;
     }
 }
