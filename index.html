@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSWallet</title>
+    <link rel="stylesheet" href="src/style/style.css">
+    <link rel="shortcut icon" href="assets/wallet.svg" type="image/x-icon">
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Wallet.js</h1>
+        </header>
+        <main class="main-content">
+            <section class="first-section">
+                <div class="user-info">
+                    <p class="user-message">
+                        Bem-Vindo, Usuário :)
+                    </p>
+                    <span class="balance"></span>
+                </div>
+                <form class="form">
+                    <div class="inputs">
+                        <div class="input-div">
+                            <label for="description" class="label">Descrição:</label>
+                            <input type="text" name="description" id="description" class="input"
+                                autocomplete="off">
+                        </div>
+                        <div class="input-div">
+                            <label for="value" class="label">Valor:</label>
+                            <input type="text" name="value" id="value" class="input" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="first-btn-div">
+                        <button class="btn saq" id="addWithdrawal">Add Saque</button>
+                        <button class="btn dep" id="addDeposit">Add Deposito</button>
+                    </div>
+                </form>
+            </section>
+            <section class="second-section">
+                <div class="second-title">TRANSAÇÕES</div>
+                <p id="user-message">Nenhuma Transação Feita...</p>
+                <div class="transactions"></div>
+            </section>
+        </main>
+        <footer class="footer">
+            <ul class="footer-items">
+                <li class="footer-item"><a target="_blank" href="https://github.com/RodrigoAzvdd">Github</a></li>
+                <li class="footer-item"><a href="#">Rodrigo Azvdd © 2023</a></li>
+                <li class="footer-item"><a target="_blank" href="https://linkedin.com/in/RodrigoAzvd">LinkedIn</a></li>
+            </ul>
+        </footer>
+    </div>
+
+    <script src="src/js/index.js"></script>
+</body>
+
+</html>

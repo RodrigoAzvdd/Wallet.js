@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1E1E1E;
+}
+
+.header {
+    height: 7rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #ffffff;
+    border-bottom: 1px solid #333333;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+}
+
+.footer-items {
+    display: flex;
+    list-style-type: none;
+    gap: 5rem;
+    font-size: .9rem;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover {
+    color: #bebebe;
+}
+
+.main-content {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    gap: 2rem;
+    width: 70%;
+}
+
+.first-section {
+    padding: 6rem 4rem;
+    height: 8rem;
+    background-color: #D9D9D9;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    border-radius: .5rem;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.user-message {
+    font-size: 1.2rem;
+}
+
+#user-message {
+    font-size: 1.5rem;
+    padding: 5rem;
+}
+
+.balance {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    width: 25rem;
+    padding: .5rem;
+    border-radius: .5rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.input-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: .9rem;
+}
+
+.input {
+    background-color: #ffffff;
+    border: 1px solid #bebebe;
+    padding: .4rem 1rem;
+    width: 25rem;
+    border-radius: .3rem;
+    font-size: 1rem;
+}
+
+.first-btn-div {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.btn {
+    background-color: #000;
+    color: #fff;
+    width: 12rem;
+    padding: .6rem;
+    border: 1px solid #000;
+    border-radius: .4rem;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.btn:hover {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #000;
+}
+
+.dep:hover {
+    background-color: #16c410;
+    border-color: #16c410;
+}
+
+.saq:hover {
+    background-color: #f50707;
+    border-color: #f50707;
+}
+
+.second-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #D9D9D9;
+    width: 100%;
+    padding: 2rem;
+    border-radius: .4rem;
+}
+
+.second-title {
+    font-size: 1.5rem;
+    padding: 2rem;
+}
+
+.transation-div {
+    padding: 1rem 2rem;
+    background-color: #333333;
+    border-radius: .4rem;
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    width: 35rem;
+}
+
+.description,
+.transation-type,
+.value {
+    color: #fff;
+}
+
+.transactions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.transation-type {
+    font-size: 1.2rem;
+}
+
+.btn-div {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.dnone {
+    display: none;
+}
+
+@media (max-width: 1290px) {
+    .balance {
+        width: 15rem;
+    }
+
+    .input-div {
+        width: 100%;
+    }
+
+    .first-btn-div {
+        width: 90%;
+    }
+
+    .saq,
+    .dep {
+        width: 100%;
+    }
+
+    .input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 975px) {
+    .form {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .first-btn-div {
+        gap: .8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 1rem;
+    }
+}
