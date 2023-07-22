@@ -150,11 +150,13 @@ a:hover {
 .dep:hover {
     background-color: #16c410;
     border-color: #16c410;
+    color: #fff;
 }
 
 .saq:hover {
-    background-color: #f50707;
-    border-color: #f50707;
+    background-color: #ff0000;
+    border-color: #ff0000;
+    color: #fff;
 }
 
 .second-section {
