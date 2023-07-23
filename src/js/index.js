@@ -12,7 +12,8 @@ async function totalValue() {
         sum += Number(transation.value)
     });
 
-    balance.textContent = `Saldo: R$${sum}`
+    if (sum < 0) balance.textContent = `Saldo = -R$${-sum}`
+    else balance.textContent = `Saldo: R$${sum}`
 }
 
 async function getTransactions() {
@@ -37,11 +38,16 @@ async function getTransactions() {
         description.classList.add('description')
         value.classList.add('value')
 
-        if (transation.type == 'saq') typeOfTransation.textContent = 'Tipo: Saque'
-        else typeOfTransation.textContent = 'Tipo: Deposito'
+        if (transation.type == 'saq') {
+            typeOfTransation.textContent = 'Tipo: Saque'
+            value.textContent = `Valor: R$${Number(transation.value) * -1}`
+        }
+        else {
+            typeOfTransation.textContent = 'Tipo: Deposito'
+            value.textContent = `Valor: R$${transation.value}`
+        }
 
         description.textContent = `Descrição: ${transation.name}`
-        value.textContent = `Valor: R$${transation.value}`
         deleteBtn.textContent = `Deletar Transação`
         updateBtn.textContent = `Atualizar Transação`
 
@@ -128,7 +134,7 @@ async function updateTransaction(id) {
 
     console.log(type);
 
-    if(type.type == "saq") newValue = newValue * -1
+    if (type.type == "saq") newValue = newValue * -1
 
     const transationData = {
         name: newDescription,

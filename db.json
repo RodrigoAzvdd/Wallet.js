@@ -1,3 +1,16 @@
 {
-  "transactions": []
+  "transactions": [
+    {
+      "name": "123",
+      "value": -123,
+      "type": "saq",
+      "id": 1
+    },
+    {
+      "name": "123",
+      "value": "123123",
+      "type": "dep",
+      "id": 2
+    }
+  ]
 }
