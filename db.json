@@ -1,16 +1,10 @@
 {
   "transactions": [
     {
-      "name": "123",
-      "value": -123,
+      "name": "Compra X",
+      "value": -1300,
       "type": "saq",
       "id": 1
-    },
-    {
-      "name": "123",
-      "value": "123123",
-      "type": "dep",
-      "id": 2
     }
   ]
 }

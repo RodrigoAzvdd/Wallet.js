@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JSWallet</title>
     <link rel="stylesheet" href="src/style/style.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="assets/wallet.svg" type="image/x-icon">
 </head>
 
@@ -15,10 +16,9 @@
         <header class="header">
             <h1 class="title">Wallet.js</h1>
         </header>
-        <div class="background-opacity"></div>
+        <div class="background-opacity dnone"></div>
         <div class="prompt">
-            <section class="update-section">
-                <span><img src="./assets/x-lg.svg" alt=""></span>
+            <section class="update-section dnone">
                 <h2 style="text-align: center;">Atualizar Dados</h2>
                 <div class="input-div">
                     <label for="newDescription" class="label">Nova Descrição:</label>
@@ -28,6 +28,7 @@
                     <label for="newValue" class="label">Novo Valor:</label>
                     <input type="text" name="newValue" id="newValue" class="input" autocomplete="off">
                 </div>
+                <button class="btn update-btn">Atualizar</button>
             </section>
         </div>
         <main class="main-content">

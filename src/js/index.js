@@ -66,7 +66,6 @@ async function getTransactions() {
         updateBtn.addEventListener('click', ev => {
             ev.preventDefault()
             updateTransaction(transation.id)
-
         })
     })
     totalValue()
@@ -127,30 +126,40 @@ async function deleteTransaction(id) {
 }
 
 async function updateTransaction(id) {
+    const bgOpacity = document.querySelector('.background-opacity')
+    const updateSection = document.querySelector('.update-section')
+    const confirmUpdateBtn = document.querySelector('.update-btn')
 
-    const newDescription = prompt('Nova Descrição:')
-    let newValue = prompt('Novo Valor:')
-    const type = await fetch(`http://localhost:3000/transactions/${id}`).then(res => res.json())
+    updateSection.classList.remove('dnone')
+    bgOpacity.classList.remove('dnone')
 
-    console.log(type);
+    confirmUpdateBtn.addEventListener('click', async () => {
+        let newDescription = document.getElementById('newDescription').value
+        let newValue = document.getElementById('newValue').value
 
-    if (type.type == "saq") newValue = newValue * -1
+        const type = await fetch(`http://localhost:3000/transactions/${id}`).then(res => res.json())
 
-    const transationData = {
-        name: newDescription,
-        value: newValue,
-        type: type.type
-    }
+        if (type.type == "saq") newValue = newValue * -1
 
-    const response = await fetch(`http://localhost:3000/transactions/${id}`, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(transationData)
+        const transationData = {
+            name: newDescription,
+            value: newValue,
+            type: type.type
+        }
+
+        const response = await fetch(`http://localhost:3000/transactions/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(transationData)
+        })
+
+        updateSection.classList.add('dnone')
+        bgOpacity.classList.add('dnone')
+
+        updateTransactionsList()
     })
-
-    updateTransactionsList()
 }
 
 async function updateTransactionsList() {
