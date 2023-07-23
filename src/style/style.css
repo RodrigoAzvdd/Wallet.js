@@ -63,6 +63,10 @@ a:hover {
     width: 70%;
 }
 
+.dnone {
+    display: none;
+}
+
 .background-opacity {
     position: fixed;
     width: 100%;
@@ -70,10 +74,6 @@ a:hover {
     background: rgba(0, 0, 0, 0.5);
     z-index: 9998;
     display: block;
-}
-
-.dnone {
-    display: none;
 }
 
 .prompt  {

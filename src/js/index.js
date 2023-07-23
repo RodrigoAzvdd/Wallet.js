@@ -4,6 +4,17 @@ const addWithdrawalBtn = document.querySelector('#addWithdrawal')
 addDepositBtn.addEventListener('click', addDeposit)
 addWithdrawalBtn.addEventListener('click', addWithdrawal)
 
+function formatNumber(number) {
+    const formater = Intl.NumberFormat('pt-BR', {
+        compactDisplay: 'long',
+        currency: 'BRL',
+        style: 'currency',
+    })
+    const formatedAmount = formater.format(number)
+
+    return formatedAmount
+}
+
 async function totalValue() {
     const balance = document.querySelector('.balance')
     const response = await fetch(`http://localhost:3000/transactions`).then(res => res.json())
@@ -12,8 +23,10 @@ async function totalValue() {
         sum += Number(transation.value)
     });
 
-    if (sum < 0) balance.textContent = `Saldo = -R$${-sum}`
-    else balance.textContent = `Saldo: R$${sum}`
+    const value = formatNumber(sum)
+
+    if (value < 0) balance.textContent = `Saldo = -R$${-value}`
+    else balance.textContent = `Saldo: R$${value}`
 }
 
 async function getTransactions() {
@@ -38,13 +51,18 @@ async function getTransactions() {
         description.classList.add('description')
         value.classList.add('value')
 
+        const formatedValue = formatNumber(transation.value)
+
+        console.log(transation.value);
+        console.log(formatedValue);
+
         if (transation.type == 'saq') {
             typeOfTransation.textContent = 'Tipo: Saque'
-            value.textContent = `Valor: R$${Number(transation.value) * -1}`
+            value.textContent = `Valor: ${(formatedValue)}`
         }
         else {
             typeOfTransation.textContent = 'Tipo: Deposito'
-            value.textContent = `Valor: R$${transation.value}`
+            value.textContent = `Valor: ${formatedValue}`
         }
 
         description.textContent = `Descrição: ${transation.name}`

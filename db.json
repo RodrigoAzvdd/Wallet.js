@@ -5,6 +5,12 @@
       "value": -1300,
       "type": "saq",
       "id": 1
+    },
+    {
+      "name": "Pagamento",
+      "value": "4200",
+      "type": "dep",
+      "id": 2
     }
   ]
 }
