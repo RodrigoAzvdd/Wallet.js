@@ -7,6 +7,7 @@ addDepositBtn.addEventListener('click', addDeposit)
 addWithdrawalBtn.addEventListener('click', addWithdrawal)
 
 function formatNumber(number) {
+    //deixando o valor em formato PTBR
     const formater = Intl.NumberFormat('pt-BR', {
         compactDisplay: 'long',
         currency: 'BRL',
@@ -18,6 +19,7 @@ function formatNumber(number) {
 }
 
 async function totalValue() {
+    //CACULAR O SALDO TOTAL DO USUARIO
     const balance = document.querySelector('.balance')
     const response = await fetch(`http://localhost:3000/transactions`).then(res => res.json())
     let sum = 0
@@ -32,6 +34,7 @@ async function totalValue() {
 }
 
 async function getTransactions() {
+    // PEGA TODOS OS OBJETOS DA ARRAY DA REQ DB.JSON => E GERA OS ELEMENTOS ABAIXO P CADA OBJETO
     const transactions = document.querySelector('.transactions')
     const response = await fetch(`http://localhost:3000/transactions`).then(res => res.json())
     response.forEach(transation => {
@@ -89,7 +92,8 @@ async function getTransactions() {
     isEmpty()
 }
 
-async function addWithdrawal() {
+async function addWithdrawal() { 
+    //FUNCAO ADD UM SAQUE => ADD O VALOR NEGATIVO REFERENTE AO SAQUE
     const description = document.querySelector('#description')
     const value = document.querySelector('#value')
 
@@ -112,6 +116,7 @@ async function addWithdrawal() {
 }
 
 async function addDeposit() {
+    //FUNCAO ADD DEPOSITO => PEGA O VALOR E DESCRICAO REFERENTE AO DEPOSITO
     const description = document.querySelector('#description')
     const value = document.querySelector('#value')
 
@@ -134,6 +139,7 @@ async function addDeposit() {
 }
 
 async function deleteTransaction(id) {
+    // PEGA O ID DO OBJETO E REMOVE POR MEIO DO METODO DELETE 
     const response = await fetch(`http://localhost:3000/transactions/${id}`, {
         method: 'DELETE'
     })
@@ -141,6 +147,11 @@ async function deleteTransaction(id) {
 }
 
 async function updateTransaction(id) {
+    // PEGO OS ELEMENTOS BG-OPACITY E UPDATE SECTION (FAZEM PARTE DO PROMPT PERSONALIZADO QUE FIZ)
+    // REMOVO O DISPLAY NONE DE AMBOS OS ELEMENTOS
+    // ADD UM EVENTO DE CLICK NO BOTAO CONFIRMUPDATE
+    // APOS O CLICK ELE PEGA OS NOVOS VALORES E FAZ A REQ POST COM OS VALORES RECEBIDOS PELOS INPUTS
+
     const bgOpacity = document.querySelector('.background-opacity')
     const updateSection = document.querySelector('.update-section')
     const confirmUpdateBtn = document.querySelector('.update-btn')
@@ -178,6 +189,8 @@ async function updateTransaction(id) {
 }
 
 async function updateTransactionsList() {
+    // METODO QUE EU USEI PARA FAZER A ATUALIZACAO DA PAGINA SEM PRECISAR RECARREGAR
+    // EU 'REMOVO' OS ELEMENTOS DA DIV TRANSACTIONS E CHAMO A FUNCAO GET Q VAI GERAR TODOS OS ELEMENTOS NOVAMENTE JUNTAMENTE COM O NOVO TOTAL DO SALDO
     const transactions = document.querySelector('.transactions')
     transactions.innerHTML = ''
     await getTransactions()
@@ -185,6 +198,8 @@ async function updateTransactionsList() {
 }
 
 async function isEmpty() {
+    // FUNCAO PARA CHECAR SE A ARRAY ESTA VAZIA
+    // ELA SERVER PARA HABILITAR, OU NAO, O TEXTO DE 'NENHUMA TRANSACAO FEITA'
     const message = document.querySelector('#user-message')
     const transactions = await fetch(`http://localhost:3000/transactions`).then(res => res.json())
 
