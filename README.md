@@ -45,9 +45,9 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 - O saldo será atualizado automaticamente após cada transação realizada.
 
-- Para alterar a descrição e valor de uma transação existente, clique no botão "Alterar Trancação" ao lado da transação desejada e faça as modificações necessárias.
+- Para alterar a descrição e valor de uma transação existente, clique no botão "Alterar Transação" ao lado da transação desejada e faça as modificações necessárias.
 
-- Para deletar uma transação registrada anteriormente, clique no botão "Deletar Trancação" ao lado da transação que deseja remover.
+- Para deletar uma transação registrada anteriormente, clique no botão "Deletar Transação" ao lado da transação que deseja remover.
 
 ## Contribuições
 
