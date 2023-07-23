@@ -7,6 +7,7 @@
     font-family: 'Inter', sans-serif;
 }
 
+
 .container {
     display: flex;
     flex-direction: column;
@@ -60,6 +61,40 @@ a:hover {
     flex: 1;
     gap: 2rem;
     width: 70%;
+}
+
+.background-opacity {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    display: block;
+}
+
+.prompt  {
+    z-index: 9999;
+    position: fixed;
+    top: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: block;
+}
+
+.update-section {
+    padding: 2rem 2rem;
+    background-color: #D9D9D9;
+    gap: 2rem;
+    width: 100%;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.update-section input {
+    width: 100%;
 }
 
 .first-section {
