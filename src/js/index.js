@@ -53,9 +53,6 @@ async function getTransactions() {
 
         const formatedValue = formatNumber(transation.value)
 
-        console.log(transation.value);
-        console.log(formatedValue);
-
         if (transation.type == 'saq') {
             typeOfTransation.textContent = 'Tipo: Saque'
             value.textContent = `Valor: ${(formatedValue)}`
