@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', getTransactions)
+
 const addDepositBtn = document.querySelector('#addDeposit')
 const addWithdrawalBtn = document.querySelector('#addWithdrawal')
 
@@ -86,8 +88,6 @@ async function getTransactions() {
     totalValue()
     isEmpty()
 }
-
-document.addEventListener('DOMContentLoaded', getTransactions)
 
 async function addWithdrawal() {
     const description = document.querySelector('#description')
@@ -194,4 +194,3 @@ async function isEmpty() {
         message.classList.remove('dnone')
     }
 }
-
